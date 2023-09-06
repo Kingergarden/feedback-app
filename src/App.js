@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unreachable */
+import Header from "./components/Header";
+import FeedbackData from "./data/ComponentData";
+import FeedbackList from "./components/ComponentList"
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function Smth(){
+
+    const test = {
+        bckg: 'blue',
+        clr: 'red'
+    }
+
+    const [feedback, setFeedback] = useState(FeedbackData)
+
+    return (
+
+
+
+
+    <>
+    <Header test={test}/>
+     <div className="container">
+     <FeedbackList feedback={feedback} />
+     </div>
+    </>
+
+    )
 }
 
-export default App;
+export default Smth;
