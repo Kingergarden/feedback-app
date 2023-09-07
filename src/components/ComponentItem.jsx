@@ -1,34 +1,29 @@
 import React from 'react'
+import { FaTimes } from 'react-icons/fa'
+import Card from './shared/Card'
 import { useState } from 'react'
+import ComponentList from './ComponentList'
 
-function ComponentItem({item}) {
-
-    const [rating, setRating] = useState(7)
-    const [text, setText] = useState("This is default text") 
-
-    
-    const handleClick = () => {
-
-        setRating( (prev) => {
-
-            return prev+45;
-        })
-    }
+function ComponentItem({item, handleDelete}) {
 
 
   return (
-    <div>
 
-                <div className="card">
+                <Card reverse={true}>
+
                         <div className="num-display">
                             {item.rating}
                         </div>
+
+                        <button onClick={() => handleDelete(item.id)} className="close">
+                                <FaTimes color={"purple"} />
+                        </button>
+
                         <div className="text-display">
                             {item.text}
                         </div>
-                        <button onClick={handleClick}>Uncle Click</button>
-                    </div>        
-    </div>
+
+                </Card>
   )
 }
 

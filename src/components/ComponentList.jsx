@@ -4,7 +4,7 @@ import React from 'react'
 
 
 
-function ComponentList({feedback}) {
+function ComponentList({feedback, handleDelete}) {
 
     if (!feedback || feedback.length === 0)
         {
@@ -14,7 +14,11 @@ function ComponentList({feedback}) {
         return(
             <div className="feedback-list">
                 { feedback.map( (item) => (
-                        <FeedbackItem key={item.id} item={item} />
+                        <FeedbackItem  
+                        key={item.id} 
+                        item={item} 
+                        handleDelete={handleDelete}
+                        />
                 ))}
             </div>
         )
