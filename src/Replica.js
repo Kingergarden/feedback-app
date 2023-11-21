@@ -5,10 +5,17 @@ import Test from "./components/TestTS";
 import SignupPage from "./pages/Signup";
 import LoginPage from "./pages/Login";
 
+import Navbar from "./components/Navbar";
+import {FooterWithSocialLinks} from "./components/Footer";
 function RepFunction() { 
 
     return (
+
+      <>
+
+        <Navbar />
         <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
         <div className="max-w-md w-full space-y-8">
          <Router>
             <Routes>
@@ -20,6 +27,9 @@ function RepFunction() {
 
         </div>
       </div>
+
+      <FooterWithSocialLinks/>
+      </>
 
 
     );
